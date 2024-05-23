@@ -1,5 +1,5 @@
 export const dynamic = 'force-dynamic'; // static by default, unless reading the request
-import { text } from 'stream/consumers';
+import { NextResponse } from 'next/server';
 import { parseStringPromise } from 'xml2js';
 const webUrl = 'https://hooks.slack.com/services/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'
 
@@ -64,5 +64,5 @@ export async function GET(request: Request) {
     const jobs = await getRecentJobPosts(feedString);   
     console.log('webUrl', webUrl )
     await postJobsToSlack(webUrl!, jobs);
-  return new Response(`Hello from ${process.env.VERCEL_REGION}`);
+    return NextResponse.json({ ok: true });
 }
