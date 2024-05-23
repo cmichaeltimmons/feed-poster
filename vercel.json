@@ -1,6 +1,5 @@
 {
-    "buildCommand": "pnpm turbo build",
-    "ignoreCommand": "pnpm dlx turbo-ignore",
+    "buildCommand": "npm build",
     "crons": [
       {
         "path": "/api/cron/poster",
