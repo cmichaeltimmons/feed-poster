@@ -53,7 +53,7 @@ async function postJobsToSlack(webhookUrl: string, jobs: any[]): Promise<void> {
         }
         console.log('Jobs posted to Slack successfully');
     } catch (error) {
-        console.error('Error posting jobs to Slack:', error.message);
+        console.error('Error posting jobs to Slack:');
         throw error;
     }
 }
